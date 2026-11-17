@@ -192,7 +192,7 @@ default::$(EXE_TARGET)
 ##
 $(TAR_IMAGE)::
 	$(CP) -f  $(CFS_APP_BUILD_PATH)/cfe_es_startup.scr $(DYNOBJPATH)/cfe_es_startup.scr
-	$(CP) -f  $(CFS_APP_BUILD_PATH)/msn_sensor.csv $(DYNOBJPATH)/msn_sensor.csv
+	$(CP) -f  $(CFS_APP_BUILD_PATH)/msn_temp.txt $(DYNOBJPATH)/msn_temp.txt
 	$(CP) -f  $(CFS_APP_BUILD_PATH)/*.obj $(DYNOBJPATH)
 	$(CP) -f  $(CFS_APP_BUILD_PATH)/*.tbl $(DYNOBJPATH)
 	$(CD) rootfs; $(TAR) cf ../tarfile $(shell $(LS) rootfs)
@@ -217,7 +217,7 @@ $(EXE_TARGET): $(OBJS) $(TAR_IMAGE)
 clean::
 	-$(RM) $(OBJS) $(EXE_TARGET) $(EXE_TARGET_PRE) $(BINARY_TARGET)
 	-$(RM) $(DYNOBJPATH)/cfe_es_startup.scr
-	-$(RM) $(DYNOBJPATH)/msn_sensor.csv
+	-$(RM) $(DYNOBJPATH)/msn_temp.txt
 	-$(RM) $(DYNOBJPATH)/*.tbl
 	-$(RM) $(DYNOBJPATH)/*.obj
 	-$(RM) $(OBJS) $(EXE_TARGET) $(EXE_TARGET_PRE) $(BINARY_TARGET) $(BINARY_TARGET).gz
